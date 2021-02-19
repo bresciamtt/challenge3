@@ -1,0 +1,13 @@
+
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: export
+    volumes:
+       - ./:/usr/src/app/challenge3
+       - /usr/src/app/challenge3/node_modules
+    command: ["npm", "run", "export"]
